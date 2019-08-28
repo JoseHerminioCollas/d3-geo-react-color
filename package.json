@@ -35,6 +35,8 @@
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.8.0",
     "jest-watch-typeahead": "0.3.1",
+    "jss": "^9.8.7",
+    "jss-preset-default": "^4.5.0",
     "material-icons": "^0.3.1",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
