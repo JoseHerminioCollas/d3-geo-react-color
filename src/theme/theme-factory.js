@@ -4,6 +4,7 @@ import {
   interpolateGreys,
   interpolateReds,
 } from 'd3'
+import mapStyle from './map-style'
 
 const menuOptions = [
   { label: 'Red', color: 'red', keyValue: 'redStyle' },
@@ -33,6 +34,7 @@ const defaultStyle = {
     alignItems: 'center',
   },
 }
+Object.assign(defaultStyle, mapStyle)
 
 function colorize(interpolator) {
   defaultStyle.mainContainer.background = interpolator(0.2)

@@ -1,33 +1,34 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
 import stateData from '../geojson/5m/2018/state.json'
 import earthData from '../geojson/earth.json'
 import seattleData from '../geojson/seattle.json'
+import { ThemeContext } from '../theme/ThemeContext'
 
 function ColorGlobe({ Map }) {
+  const { cssSheet } = useContext(ThemeContext)
   return (
-    <svg>
+    <svg className={cssSheet.classes.mapContainer}>
       <rect />
       <g
         width="960"
         height="500"
-        transform="scale(0.6) translate(0, 150)"
+        transform="scale(0.6) translate(0, 180)"
       >
         <path
           d={Map.path(Map.graticule())}
-          // className={cssClasses.graticule}
+          className={cssSheet.classes.graticule}
         />
         <path
           d={Map.path(earthData)}
-          // className={cssClasses.earth}
+          className={cssSheet.classes.earth}
         />
         <path
           d={Map.path(stateData)}
-          // className={cssClasses.state}
+          className={cssSheet.classes.state}
         />
         <path
           d={Map.path(seattleData)}
-          // className={cssClasses.city}
+          className={cssSheet.classes.city}
         />
       </g>
     </svg>

@@ -15,7 +15,6 @@ const Map = {
     return projection.scale()
   },
   rotate: (rotateChange = [10, 10]) => {
-    // const newLong = projection.rotate()[0] + 10
     projection.rotate(rotateChange)
     return projection.rotate()
   },
