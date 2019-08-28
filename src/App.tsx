@@ -1,7 +1,8 @@
 import React from 'react'
-import logo from './logo.svg'
 import './App.css'
 import 'material-icons/iconfont/material-icons.css'
+import ColorGlobe from './components/ColorGlobe'
+import Map from './map'
 
 const App: React.FC = () => (
   <div className="App">
@@ -11,18 +12,12 @@ const App: React.FC = () => (
       >
         face
       </i>
-      <img src={logo} className="App-logo" alt="logo" />
+      <ColorGlobe
+        Map={Map}
+      />
       <p>
         XXXX
       </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
     </header>
   </div>
 )
