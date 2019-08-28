@@ -1,13 +1,19 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css'
+import 'material-icons/iconfont/material-icons.css'
 
 const App: React.FC = () => (
   <div className="App">
     <header className="App-header">
+      <i
+        className="material-icons"
+      >
+        face
+      </i>
       <img src={logo} className="App-logo" alt="logo" />
       <p>
-          XXXX
+        XXXX
       </p>
       <a
         className="App-link"
@@ -15,7 +21,7 @@ const App: React.FC = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-          Learn React
+        Learn React
       </a>
     </header>
   </div>
