@@ -12,6 +12,7 @@ const themes = {
   red: { label: 'Red', color: '#f00' },
   green: { label: 'Green', color: 'green' },
   blue: { label: 'Blue', color: 'blue' },
+  orange: { label: 'Orange', color: 'orange' },
 }
 export { themes }
 const interpolators = {
@@ -20,6 +21,7 @@ const interpolators = {
   red: interpolateReds,
   green: interpolateGreens,
   blue: interpolateBlues,
+  orange: interpolateBlues,
 }
 const defaultStyle = {
   mainContainer: {
@@ -37,17 +39,17 @@ const defaultStyle = {
   },
   control: {
     color: 'white',
-    background: 'gray',
     position: 'fixed',
+    bottom: 0,
+    right: 0,
     display: 'flex',
     justifyContent: 'center',
-    width: '100%',
-    bottom: 0,
     flexDirection: 'row',
     alignItems: 'center',
   },
   controlColor: {
-    width: '25px',
+    width: '30px',
+    height: '30px',
   },
 }
 Object.assign(defaultStyle, mapStyle)
@@ -60,6 +62,7 @@ function colorize(interpolator) {
   return newStyleObject
 }
 function themeFactory(themeName = 'default') {
+  if (!interpolators[themeName]) throw new Error('name does not exist')
   return colorize(interpolators[themeName])
 }
 export default themeFactory
