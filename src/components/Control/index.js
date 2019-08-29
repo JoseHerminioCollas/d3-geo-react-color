@@ -19,6 +19,7 @@ function Control() {
           disabled={theme === themeName}
           className={cssSheet.classes.controlColor}
           style={{
+            cursor: theme !== themeName ? 'pointer' : 'default',
             background: themes[theme].color,
           }}
         >
