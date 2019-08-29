@@ -11,6 +11,7 @@ const App: React.FC = () => {
     <section className={cssSheet.classes.mainContainer}>
       <i
         className="material-icons"
+        style={{ display: 'none' }}
       >
         face
       </i>

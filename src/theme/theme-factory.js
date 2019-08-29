@@ -3,16 +3,18 @@ import {
   interpolateGreens,
   interpolateGreys,
   interpolateReds,
+  interpolateOranges,
+  interpolatePurples,
 } from 'd3'
 import mapStyle from './map-style'
 
 const themes = {
-  default: { label: 'Gray', color: 'gray' },
   gray: { label: 'Gray', color: 'gray' },
   red: { label: 'Red', color: '#f00' },
   green: { label: 'Green', color: 'green' },
   blue: { label: 'Blue', color: 'blue' },
   orange: { label: 'Orange', color: 'orange' },
+  purple: { label: 'Purple', color: 'purple' },
 }
 export { themes }
 const interpolators = {
@@ -21,7 +23,8 @@ const interpolators = {
   red: interpolateReds,
   green: interpolateGreens,
   blue: interpolateBlues,
-  orange: interpolateBlues,
+  orange: interpolateOranges,
+  purple: interpolatePurples,
 }
 const defaultStyle = {
   mainContainer: {
