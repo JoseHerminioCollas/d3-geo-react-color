@@ -1,9 +1,14 @@
 import React, { useContext } from 'react'
 import 'material-icons/iconfont/material-icons.css'
-import { ThemeContext, themeNames } from '../../theme/ThemeContext'
+import { ThemeContext } from '../../theme/ThemeContext'
 
 function Control() {
-  const { themeName, setThemeName, cssSheet } = useContext(ThemeContext)
+  const {
+    themeName,
+    setThemeName,
+    cssSheet,
+    themeNames,
+  } = useContext(ThemeContext)
 
   return (
     <section

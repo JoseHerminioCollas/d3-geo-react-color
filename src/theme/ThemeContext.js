@@ -20,10 +20,16 @@ const ThemeProvider = ({ children }) => {
 
 
   return (
-    <ThemeContext.Provider value={{ themeName, setThemeName, cssSheet }}>
+    <ThemeContext.Provider value={{
+      themeName,
+      setThemeName,
+      cssSheet,
+      themeNames,
+    }}
+    >
       {children}
     </ThemeContext.Provider>
   )
 }
 
-export { ThemeContext, ThemeProvider, themeNames }
+export { ThemeContext, ThemeProvider }
