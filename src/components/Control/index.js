@@ -15,6 +15,7 @@ function Control() {
       {Object.keys(themes).map(theme => (
         <button
           type="button"
+          title={themes[theme].label}
           onClick={() => setThemeName(theme)}
           disabled={theme === themeName}
           className={cssSheet.classes.controlColor}

@@ -5,6 +5,7 @@ import {
   interpolateReds,
   interpolateOranges,
   interpolatePurples,
+  interpolateBrBG,
 } from 'd3'
 import mapStyle from './map-style'
 
@@ -15,6 +16,7 @@ const themes = {
   blue: { label: 'Blue', color: 'blue' },
   orange: { label: 'Orange', color: 'orange' },
   purple: { label: 'Purple', color: 'purple' },
+  brownBlueGreen: { label: 'Brown Blue Green', color: 'brown' },
 }
 export { themes }
 const interpolators = {
@@ -25,6 +27,7 @@ const interpolators = {
   blue: interpolateBlues,
   orange: interpolateOranges,
   purple: interpolatePurples,
+  brownBlueGreen: interpolateBrBG,
 }
 const defaultStyle = {
   mainContainer: {
@@ -61,6 +64,11 @@ function colorize(interpolator) {
   defaultStyle.mainContainer.background = interpolator(0.2)
   defaultStyle.mainContainer.fill = interpolator(0.5)
   defaultStyle.mainContainer.stroke = interpolator(0.7)
+  defaultStyle.graticule.stroke = interpolator(0)
+  defaultStyle.earth.fill = interpolator(0.9)
+  defaultStyle.earth.stroke = interpolator(0.3)
+  defaultStyle.state.stroke = interpolator(0.3)
+  defaultStyle.state.fill = interpolator(0.7)
   const newStyleObject = JSON.parse(JSON.stringify(defaultStyle))
   return newStyleObject
 }

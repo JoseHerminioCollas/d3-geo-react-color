@@ -7,7 +7,7 @@ jss.setup(preset())
 
 const ThemeContext = createContext({})
 const ThemeProvider = ({ children }) => {
-  const [themeName, setThemeName] = useState('red')
+  const [themeName, setThemeName] = useState('brownBlueGreen')
   const sheet = jss.createStyleSheet(themeFactory(themeName))
   sheet.attach()
   const [cssSheet, setCssSheet] = useState(sheet)

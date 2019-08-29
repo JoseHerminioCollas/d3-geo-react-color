@@ -1,7 +1,7 @@
 const mapStyle = {
   mapContainer: {
-    stroke: 'gray',
-    fill: 'black',
+    stroke: 'green',
+    fill: 'green',
     width: '600px',
     height: '600px',
   },
