@@ -3,6 +3,7 @@ import 'material-icons/iconfont/material-icons.css'
 import ColorGlobe from './components/ColorGlobe'
 import Map from './map'
 import { ThemeContext } from './theme/ThemeContext'
+import Control from './components/Control'
 
 const App: React.FC = () => {
   const { cssSheet }: any = useContext(ThemeContext)
@@ -13,6 +14,7 @@ const App: React.FC = () => {
       >
         face
       </i>
+      <Control />
       <ColorGlobe
         Map={Map}
       />
