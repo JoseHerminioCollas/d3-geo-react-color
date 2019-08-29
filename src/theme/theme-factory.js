@@ -35,6 +35,20 @@ const defaultStyle = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  control: {
+    color: 'white',
+    background: 'gray',
+    position: 'fixed',
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    bottom: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  controlColor: {
+    width: '25px',
+  },
 }
 Object.assign(defaultStyle, mapStyle)
 

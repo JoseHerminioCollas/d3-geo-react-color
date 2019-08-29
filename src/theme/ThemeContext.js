@@ -21,9 +21,9 @@ const ThemeProvider = ({ children }) => {
   return (
     <ThemeContext.Provider value={{
       themeName,
+      themes,
       setThemeName,
       cssSheet,
-      themes,
     }}
     >
       {children}

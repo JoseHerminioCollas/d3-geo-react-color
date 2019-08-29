@@ -5,37 +5,26 @@ import { ThemeContext } from '../../theme/ThemeContext'
 function Control() {
   const {
     themeName,
+    themes,
     setThemeName,
     cssSheet,
-    themes,
   } = useContext(ThemeContext)
 
   return (
-    <section
-      style={{
-        position: 'fixed',
-        display: 'flex',
-        justifyContent: 'center',
-        width: '100%',
-        bottom: 0,
-      }}
-    >
-      <section className={cssSheet.classes.controlColor}>
-        {Object.values(themes).map(tN => (
-          <button
-            type="button"
-            onClick={() => setThemeName(tN.keyValue)}
-            disabled={tN.keyValue === themeName}
-            style={{
-              background: tN.color,
-              width: '25px',
-            }}
-          >
-            &nbsp;
-          </button>
-        ))}
-      </section>
-      )
+    <section className={cssSheet.classes.control}>
+      {Object.keys(themes).map(theme => (
+        <button
+          type="button"
+          onClick={() => setThemeName(theme)}
+          disabled={theme === themeName}
+          className={cssSheet.classes.controlColor}
+          style={{
+            background: themes[theme].color,
+          }}
+        >
+          &nbsp;
+        </button>
+      ))}
     </section>
   )
 }
