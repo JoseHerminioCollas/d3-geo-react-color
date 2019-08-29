@@ -7,7 +7,7 @@ function Control() {
     themeName,
     setThemeName,
     cssSheet,
-    themeNames,
+    themes,
   } = useContext(ThemeContext)
 
   return (
@@ -21,7 +21,7 @@ function Control() {
       }}
     >
       <section className={cssSheet.classes.controlColor}>
-        {Object.values(themeNames).map(tN => (
+        {Object.values(themes).map(tN => (
           <button
             type="button"
             onClick={() => setThemeName(tN.keyValue)}

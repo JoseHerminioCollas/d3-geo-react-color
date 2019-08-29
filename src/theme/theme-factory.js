@@ -6,18 +6,20 @@ import {
 } from 'd3'
 import mapStyle from './map-style'
 
-const menuOptions = [
-  { label: 'Red', color: 'red', keyValue: 'redStyle' },
-  { label: 'Blue', color: 'blue', keyValue: 'blueStyle' },
-  { label: 'Green', color: 'green', keyValue: 'greenStyle' },
-  { label: 'Gray', color: 'gray', keyValue: 'grayStyle' },
-]
+const themes = {
+  default: { label: 'Gray', color: 'gray' },
+  gray: { label: 'Gray', color: 'gray' },
+  red: { label: 'Red', color: '#f00' },
+  green: { label: 'Green', color: 'green' },
+  blue: { label: 'Blue', color: 'blue' },
+}
+export { themes }
 const interpolators = {
-  defaultStyle: interpolateGreys,
-  grayStyle: interpolateGreys,
-  redStyle: interpolateReds,
-  greenStyle: interpolateGreens,
-  blueStyle: interpolateBlues,
+  default: interpolateGreys,
+  gray: interpolateGreys,
+  red: interpolateReds,
+  green: interpolateGreens,
+  blue: interpolateBlues,
 }
 const defaultStyle = {
   mainContainer: {
@@ -43,8 +45,7 @@ function colorize(interpolator) {
   const newStyleObject = JSON.parse(JSON.stringify(defaultStyle))
   return newStyleObject
 }
-function themeFactory(themeName = 'defaultStyle') {
+function themeFactory(themeName = 'default') {
   return colorize(interpolators[themeName])
 }
-export { menuOptions }
 export default themeFactory
